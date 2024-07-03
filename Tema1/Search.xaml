@@ -1,0 +1,47 @@
+﻿<Page x:Class="Tema1.Search"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Tema1"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+  
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" Background="#8A817C"
+      Title="Search">
+
+    <Grid>
+        <StackPanel VerticalAlignment="top" >
+            <TextBlock Text="searching" Style="{StaticResource titleText}" Foreground="white" Margin="0 0 0 10"/>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" MinWidth="0" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+
+                <xctk:WatermarkComboBox x:Name="searchComboBox" HorizontalAlignment="Center"  FontFamily="Century Gothic" VerticalAlignment="Center" Width="120" Watermark="Introdu text..." IsEditable="True"/>
+                <Border BorderThickness="1" BorderBrush="#acb0af" Margin="20 7" CornerRadius="5" Grid.Row="0" Grid.Column="1">
+                    <ComboBox x:Name="categoryComboBox" Style="{StaticResource CustomComboBoxStyle}" Margin="10,0,0,0"  VerticalAlignment="Center" HorizontalAlignment="Left"  Width="150" Height="20" Foreground="#FF060606" BorderBrush="#FFBA5C5C" Background="#FF733F3F" Cursor="AppStarting" FontFamily="Century Gothic"/>
+                </Border>
+            </Grid>
+            <Button Click="OnSelectWordButtonClick" Style="{StaticResource mainbutton}" Content="Select the word" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" x:Name="wordNameTextBlock" Style="{StaticResource normalText}" Foreground="White" Margin="20 10" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Height="42" Width="auto" />
+                <TextBlock Grid.Column="1" x:Name="wordCategoryTextBlock" Style="{StaticResource normalText}" Foreground="White" Margin="0 10" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Height="42" Width="auto" />
+
+            </Grid>
+            <TextBlock x:Name="descriptionTextBlock" Style="{StaticResource normalText}" Foreground="White" Margin="0 10" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Height="42" Width="auto"  />
+            <Border BorderThickness="2" BorderBrush="#acb0af" CornerRadius="10" Width="400" Height="200">
+                <Image x:Name="imageControl" Height="165" Width="360" />
+            </Border>
+
+        </StackPanel>
+
+    </Grid>
+</Page>
